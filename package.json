@@ -15,7 +15,6 @@
   "author": "Ampersanda",
   "license": "ISC",
   "dependencies": {
-    "ampersanda-buttons": "^1.0.0",
     "modern-normalize": "^0.5.0"
   }
 }
