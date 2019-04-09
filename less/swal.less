@@ -1,0 +1,64 @@
+@import "./typography";
+
+.swal-button {
+  color: var(--success);
+  background: 0 0;
+
+  &:not([disabled]):hover, &:not([disabled]):focus {
+    background: #f7f7fb;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.swal-modal {
+  .system-font();
+}
+
+.swal-button {
+  &&--confirm {
+    @slightly-green: rgba(52, 191, 163, 0.08);
+    background: @slightly-green;
+  }
+
+  &&--danger {
+    background: 0 0;
+    /*background: rgba(244, 81, 108, 0.08);*/
+    color: var(--danger);
+
+    &.swal-button--loading {
+      background: var(--danger);
+
+      &:not([disabled]):hover, &:not([disabled]):focus {
+        background: var(--danger);
+      }
+    }
+  }
+
+  &&--loading {
+    color: transparent;
+    background: var(--success);
+
+    &:not([disabled]):hover, &:not([disabled]):focus {
+      background: var(--success);
+    }
+  }
+}
+
+.swal-overlay--show-modal .swal-modal {
+  animation: fade-zoom-in .3s ease;
+}
+
+@keyframes fade-zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
