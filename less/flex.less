@@ -1,0 +1,55 @@
+.flex {
+  display: flex;
+
+  &&--wrap {
+    flex-wrap: wrap;
+  }
+
+  &&--wrap__reverse {
+    flex-wrap: wrap-reverse;
+  }
+
+  &&--column {
+    flex-direction: column;
+  }
+
+  &&--row__reverse {
+    flex-direction: column;
+  }
+
+  &&--column__reverse {
+    flex-direction: column;
+  }
+
+  &-inline {
+    display: inline-flex;
+  }
+
+  &&--jspace-between {
+    justify-content: space-between;
+  }
+
+  &&--jstart {
+    justify-content: flex-start;
+  }
+
+  &&--jend {
+    justify-content: flex-end;
+  }
+
+  &&--jcenter {
+    justify-content: center;
+  }
+
+  &&--acenter {
+    align-items: center;
+  }
+
+  &&--astart {
+    align-items: flex-start;
+  }
+
+  &&--aend {
+    align-items: flex-end;
+  }
+}
