@@ -1,0 +1,104 @@
+@import "../pseudos";
+
+.as-popup {
+  @gap: 10px;
+
+  transform: translateY(24px);
+  visibility: collapse;
+  opacity: 0;
+
+  background: #fff;
+  padding: 1.3em 1.5em;
+  box-shadow: 0 0 15px 1px rgba(81, 77, 92, 0.2);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  min-width: 260px;
+  position: absolute;
+  top: calc(100% + @gap);
+  z-index: 1;
+
+  transition: opacity .2s ease, transform .2s ease, visibility 0s ease .21s;
+
+  .apply-before({ width: 32px; height: @gap; background: #fff; content: ""; position: absolute; top: -@gap; clip-path: polygon(50% 0, 100% 100%, 0 100%); left: 48px; });
+
+  &.is--left {
+    transform: translateX(-40px);
+  }
+
+  &.is--right {
+    transform: translateX(calc(-100% + 56px));
+    left: calc(100% - 44px);
+
+    .apply-before({ left: calc(100% - 48px); });
+  }
+
+  &.is--center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .apply-before({ left: 50%; transform: translateX(-50%); });
+  }
+
+  &.is--purple {
+    .apply-before({ background: #7f60dd; })
+  }
+
+  &.is--active {
+    .active-popup();
+
+    &.is--left {
+      .active-popup__has-gap();
+    }
+
+    &.is--right {
+      .active-popup--right__has-gap();
+    }
+
+    &.is--center {
+      .active-popup--center__has-gap();
+    }
+  }
+}
+
+.active-popup() {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+
+  transition: opacity .2s ease, transform .2s ease, visibility 0s ease;
+}
+
+.active-popup--center() {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+
+  transition: opacity .2s ease, transform .2s ease, visibility 0s ease;
+}
+
+.active-popup__has-gap() {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-40px) translateY(24px);
+
+  transition: opacity .2s ease, transform .2s ease, visibility 0s ease;
+}
+
+.active-popup--right__has-gap(){
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(calc(-100% + 56px)) translateY(24px);
+
+  transition: opacity .2s ease, transform .2s ease, visibility 0s ease;
+}
+
+.active-popup--center__has-gap() {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(24px);
+
+  transition: opacity .2s ease, transform .2s ease, visibility 0s ease;
+}
