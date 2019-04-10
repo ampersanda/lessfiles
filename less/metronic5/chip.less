@@ -1,0 +1,47 @@
+.chip {
+  display: inline-block;
+  padding: 3px 16px;
+  border-radius: 16px;
+  font-size: x-small;
+
+  &&--small {
+    padding: 0 14px;
+    font-size: 11px;
+  }
+
+  &&--success {
+    color: #fff;
+    background: var(--success);
+    border: 1px solid var(--success);
+  }
+
+  &&--danger {
+    color: #fff;
+    background: var(--danger);
+    border: 1px solid var(--danger);
+  }
+
+  &&--info {
+    color: #fff;
+    background: var(--info);
+    border: 1px solid var(--info);
+  }
+
+  &&--link {
+    color: #444;
+    background: var(--link);
+    border: 1px solid #777;
+  }
+
+  &&--warning {
+    color: #444;
+    background: var(--warning);
+    border: 1px solid var(--warning);
+  }
+
+  &&--disabled {
+    color: #777;
+    background: var(--disabled);
+    border: 1px solid var(--disabled);
+  }
+}

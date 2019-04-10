@@ -1,0 +1,118 @@
+@import "~ampersanda-lessfiles/less/pseudos";
+@import '../typography';
+
+.input-wrapper {
+  color: #575962;
+  font-size: small;
+  margin-bottom: 1px; // overlap because of border bottom
+
+  &.input-type__textarea {
+    .input-wrapper__slot--wrapper {
+      border: 1px solid transparent;
+    }
+
+    &.input-wrapper {
+      &__success {
+        .input-wrapper__slot--wrapper {
+          border: 1px solid var(--success);
+        }
+      }
+
+      &__error {
+        .input-wrapper__slot--wrapper {
+          border: 1px solid var(--danger);
+        }
+      }
+    }
+  }
+
+  &__success {
+    .input-wrapper__slot {
+      .apply-before({ background: var(--green-lighter); });
+      .apply-after({ background: var(--success); });
+    }
+
+    &.input-type__textarea {
+      .input-wrapper__slot {
+        .apply-before-after({ display: none; });
+      }
+    }
+  }
+
+  &__error {
+    .input-wrapper__slot {
+      .apply-before({ background: var(--red-lighter); });
+      .apply-after({ background: var(--danger); });
+    }
+
+    &.input-type__textarea {
+      .input-wrapper__slot {
+        .apply-before-after({ display: none; });
+      }
+    }
+  }
+
+  &&--small {
+    max-width: 320px;
+  }
+
+  &__info {
+    font-size: .88em;
+    margin: 4px 0;
+    color: var(--danger)
+  }
+
+  &__slot {
+    &:focus-within {
+      .apply-after({ width: 100%; });
+    }
+
+    &--wrapper {
+      .prefix, .suffix {
+        font-size: 1rem;
+        position: absolute;
+        top: 0.84em;
+      }
+
+      .prefix {
+        left: 0.4em;
+
+        ~ input, ~ div, ~ span {
+          padding-left: 2em !important;
+        }
+      }
+
+      .suffix {
+        right: 0.4em;
+
+        ~ input, ~ div, ~ span {
+          padding-right: 2em !important;
+        }
+      }
+    }
+
+    .apply-before-after({ position: absolute; content: ''; height: 1px; top: 100%; left: 0; });
+    .apply-before({ background: var(--input-border-color); width: 100%; });
+    .apply-after({ background: var(--input-border-color-active); width: 0; transition: width .2s ease });
+
+    &.input-type__textarea {
+      .input-wrapper__slot {
+        .apply-before-after({ display: none; });
+      }
+    }
+  }
+
+  select, input:not([type='button']), input:not([type='submit']), textarea {
+    .system-font();
+    -webkit-appearance: none;
+    outline: none;
+  }
+
+  input:not([type='button']), input:not([type='submit']) {
+    border: none;
+    margin: 0;
+    outline: none;
+    padding: 1em 0;
+    width: 100%;
+  }
+}
