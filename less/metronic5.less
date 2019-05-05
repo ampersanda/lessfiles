@@ -130,3 +130,27 @@ label {
   width: 1em;
   height: 1em;
 }
+
+fieldset {
+  border-color: #f8f8f8;
+  border-style: solid;
+  padding-bottom: 1.5em;
+}
+
+legend {
+  padding: 0 8px;
+  font-weight: bold;
+}
+
+.form > .input-wrapper:not(:first-child) {
+  margin-top: 1em;
+}
+
+.form-control input[type=checkbox] {
+  margin: 0;
+  padding: 0;
+
+  &:focus {
+    outline: 2px solid var(--primary);
+  }
+}
