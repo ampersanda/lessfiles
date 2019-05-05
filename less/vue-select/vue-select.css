@@ -1,0 +1,38 @@
+.vs__dropdown-toggle, .vs__selected-options {
+  padding: 0 !important;
+}
+
+.vs__selected-options {
+  position: relative;
+  min-height: 48px;
+}
+
+.vs__selected-options input {
+  margin: 0 !important;
+  padding: 1em !important;
+}
+
+.vs__selected {
+  margin: 1em !important;
+}
+
+.vs__selected + input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  min-height: 40px;
+  top: -1px;
+  left: -1px;
+}
+
+.vs__actions {
+  padding: 0 1em !important;
+}
+
+.vs__dropdown-option {
+  padding: 1em 1.6em !important;
+}
+
+.vs__dropdown-option:hover, .vs__dropdown-option:focus, .vs__dropdown-option.vs__dropdown-option--highlight {
+  background: #716aca
+}
