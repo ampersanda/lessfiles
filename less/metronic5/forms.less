@@ -111,10 +111,6 @@
       border-radius: 2px;
       transition: background .2s ease, border-color .2s ease;
 
-      &[disabled=disabled] {
-        border-color: var(--disabled-gray)
-      }
-
       &.no--margin__label {
         + label {
           margin-left: 0;
@@ -134,7 +130,8 @@
           border-color: var(--disabled-gray);
 
           + label {
-            .apply-before({ background: var(--disabled-gray); })
+            .apply-before({ background: var(--disabled-gray); });
+            .apply-after({ background: var(--disabled-gray); })
           }
         }
 
