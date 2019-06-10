@@ -25,7 +25,10 @@
   min-height: 40px;
   top: -1px;
   left: -1px;
-  background: 0 0;
+}
+
+.vs__selected + input[disabled=disabled] {
+  background: 0 0 !important;
 }
 
 .vs__actions {
